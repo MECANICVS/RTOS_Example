@@ -439,7 +439,7 @@ void Task1_HP(void *argument)
   /* Infinite loop */
   for(;;)
   {
-		HAL_UART_Transmit(&huart2,(uint8_t*)msg,strlen(msg1),10000);
+		HAL_UART_Transmit(&huart2,(uint8_t*)msg,strlen(msg),10000);
 		osSemaphoreAcquire(SEMHandle, osWaitForever);
 		HAL_UART_Transmit(&huart2,(uint8_t*)msg1,strlen(msg1),10000);
 		unsigned long delay = rand()%501 + 500; // rand()%(max - min + 1) + min
